@@ -51,9 +51,9 @@ const TableLayout: FC = () => {
 
     return (
         <Form
-            name='row'
+            name="row"
             onFinish={onFinish}
-            autoComplete='off'
+            autoComplete="off"
             form={form}
         >   
             <div className={style.banner}>

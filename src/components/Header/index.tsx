@@ -26,7 +26,7 @@ const Header: FC = () => {
                 
             
             <Tabs
-            defaultActiveKey='view'
+            defaultActiveKey="view"
             items={items}
             />
         </header>

@@ -12,7 +12,7 @@ const Layout = () => {
             <div>
                 <Navigation/>
             </div>
-            <div className='layout'>
+            <div className="layout">
                 <Outlet/>
             </div>
         </div>

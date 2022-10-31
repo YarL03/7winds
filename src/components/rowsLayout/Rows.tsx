@@ -6,7 +6,7 @@ import { Row } from "./Row"
 
 export const Rows: FC = () => {
     const treeRows = useSelector(selectTreeRows)
-    
+
     const rows: Array<any> = []
 
     treeRows.forEach((root: ITreeRow) => {
@@ -58,7 +58,8 @@ export const Rows: FC = () => {
 
     return (
         <>
-            {treeRows.length ? rows : <div>Loading...</div>}
+            {treeRows.length ? rows : <div>Loading...</div>} 
+            {/* важно, чтобы что-то было, добавление при treeRows.length === 0 не делал  */}
         </>
     )
 }

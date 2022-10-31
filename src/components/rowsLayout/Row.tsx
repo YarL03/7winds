@@ -7,17 +7,11 @@ import style from './RowsLayout.module.scss'
 import { useDispatch } from 'react-redux'
 import { ExtendedDispatch } from '../../shared/types/ExtendedDispatch.type'
 import { deleteRow, prepareRow, setDisableRows } from '../../redux/actions/Works'
+import { IRowComponent } from './Row.types'
 
-interface T {
-    rowName: string
-    salary: number
-    equipmentCosts: number
-    overheads: number
-    estimatedProfit: number
-    [x: string]: any
-}
 
-export const Row: FC<T> = ({parentId, id, rowName, salary, equipmentCosts, overheads, estimatedProfit, ...props}) => {
+
+export const Row: FC<IRowComponent> = ({parentId, id, rowName, salary, equipmentCosts, overheads, estimatedProfit, ...props}) => {
     const [edit, setEdit] = useState(!rowName)
     const [showButtons, setShowButtons] = useState(false)
 
@@ -147,37 +141,37 @@ export const Row: FC<T> = ({parentId, id, rowName, salary, equipmentCosts, overh
                     <td className={style.connection}>{img}</td>
                     <td>
                         <Form.Item
-                        name='rowName'
+                        name="rowName"
                         >
                             <Input placeholder={`${rowName}`}  onPressEnter={onPressEnter}/>
                         </Form.Item>
-                        <Form.Item name='parentId'/>
-                        <Form.Item name='rID'/>
+                        <Form.Item name="parentId"/>
+                        <Form.Item name="rID"/>
                     </td>
                     <td>
                         <Form.Item
-                        name='salary'
+                        name="salary"
                         >
                             <Input placeholder={`${salary}`} onPressEnter={onPressEnter}/>
                         </Form.Item>
                     </td>
                     <td>
                         <Form.Item
-                        name='equipmentCosts'
+                        name="equipmentCosts"
                         >
                             <Input placeholder={`${equipmentCosts}`} onPressEnter={onPressEnter}/>
                         </Form.Item>
                     </td>
                     <td>
                         <Form.Item
-                        name='overheads'
+                        name="overheads"
                         >
                             <Input placeholder={`${overheads}`} onPressEnter={onPressEnter}/>
                         </Form.Item>
                     </td>
                     <td>
                         <Form.Item
-                        name='estimatedProfit'
+                        name="estimatedProfit"
                         >
                             <Input placeholder={`${estimatedProfit}`} onPressEnter={onPressEnter}/>
                         </Form.Item>

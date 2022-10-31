@@ -7,7 +7,7 @@ import style from './Navigation.module.scss'
 
 const items = [
     {
-        label: <Link to='/works'>
+        label: <Link to="/works">
             <GoldFilled className={style.navIcon}/>
             <span>СМР</span> 
         </Link>,
@@ -20,7 +20,7 @@ const Navigation: FC = () => {
         <div className={style.menuContainer}>
             <Menu
             style={{width: 256}}
-            mode='vertical'
+            mode="vertical"
             items={items}
             />
         </div>
