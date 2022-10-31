@@ -1,0 +1,15 @@
+@import "../../index.scss";
+
+.menuContainer {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: fit-content;
+    height: 100%;
+    border-top: 1px solid $gray;
+    border-right: 1px solid $gray;
+}
+
+.navIcon {
+    margin-right: 8px;
+}

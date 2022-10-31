@@ -1,0 +1,1 @@
+export type ExtendedDispatch = (dispatch: any) => Promise<void> | any

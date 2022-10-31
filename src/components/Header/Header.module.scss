@@ -1,0 +1,26 @@
+@import "../../index.scss";
+
+.header {
+    height: 50px;
+    display: flex;
+
+    .headerIconContainer {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+
+        .headerIcon {
+            color: #fff;
+            margin: 0 5px;
+            cursor: pointer;
+
+    
+            svg {
+                height: 16px;
+                width: 16px
+            }
+        }
+    }
+
+    
+}

@@ -1,0 +1,232 @@
+@import "../../index.scss";
+
+
+
+.table {
+    width: 100%;
+    height: 100%;
+    background: $background-secondary;
+
+    th:first-child {
+        width: 150px;
+    }
+
+    th:nth-child(2) {
+        width: 700px;
+    }
+
+    td,
+    th {
+        text-align: start;
+        padding: 10px 20px;
+    }
+
+    td {
+        height: 60px;
+        position: relative;
+    }
+
+    svg {
+        height: 20px;
+        width: 20px;
+    }
+
+    td > div:first-child {
+        margin-bottom: 0;
+    }
+
+    td > div:nth-child(2),
+    td > div:nth-child(3) {
+        display: none;
+    }
+
+    tr {
+        color: #FFFFFF;
+    }
+
+    tr .connection,
+    tr .connection span {
+        position: relative;
+    }
+
+    tr .connection span {
+        left: 7px;
+    }
+
+    tr .connection > div span {
+        left: 0;
+    }
+
+    tr[data-level='2'] .allButtons {
+        left: 30px;
+    }
+
+    tr[data-level='3'] .allButtons {
+        left: 60px;
+    }
+
+   tr[data-level='1'][data-child='true'] .connection:after { // вниз
+        position: absolute;
+        top: 35px;
+        left: 36px;
+        content: '';
+        border: 1px solid #fff;
+        height: 54px;
+        // width: 100px;
+        color: #fff;
+    }
+
+    tr[data-level='2'][data-child='true'] .connection:after { // вниз
+        position: absolute;
+        top: 35px;
+        left: 66px;
+        content: '';
+        border: 1px solid #fff;
+        height: 54px;
+        // width: 100px;
+        color: #fff;
+    }
+
+    tr[data-level='2'] .connection::before { // бок
+        position: absolute;
+        top: 27px;
+        left: 37px;
+        content: '';
+        width: 21px;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    tr[data-level='2'] + tr[data-level='2'] .connection:after { // вверх
+        position: absolute;
+        top: -31px;
+        left: 36px;
+        content: '';
+        border: 1px solid #fff;
+        height: 60px;
+        // width: 100px;
+        color: #fff;
+    }
+
+    tr[data-level='3'] .connection::before { // бок
+        position: absolute;
+        top: 27px;
+        left: 67px;
+        content: '';
+        width: 22px;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    tr[data-level='3'] + tr[data-level='3'][data-last='false'] .connection:after { // вверх
+        position: absolute;
+        top: -31px;
+        left: 36px;
+        content: '';
+        border-left: 2px solid #fff;
+        border-right: 2px solid #fff;
+        height: 60px;
+        width: 32px;
+        color: #fff;
+    }
+
+    tr[data-level='2'][data-last='true'] ~ tr[data-level='3'][data-last='false'] .connection:after { // вверх
+        position: absolute;
+        top: -31px;
+        left: 66px;
+        content: '';
+        border: 1px solid #fff;
+        height: 60px;
+        width: 0;
+        color: #fff;
+    }
+
+    tr[data-level='3'] + tr[data-level='3'][data-last='true'] .connection:after { // вверх
+        position: absolute;
+        top: -31px;
+        left: 66px;
+        content: '';
+        border: 1px solid #fff;
+        height: 60px;
+        color: #fff;
+    }
+
+    tr[data-level='2'][data-last='false'] + tr[data-level='3'][data-last='false'] .connection:after { // вверх
+        position: absolute;
+        top: -31px;
+        left: 36px;
+        content: '';
+        border: 0;
+        border-left: 2px solid #fff;
+        height: 60px;
+        width: 32px;
+        color: #fff;
+    }
+
+    tr[data-level='2'][data-last='true'] + tr[data-level='3'][data-last='false'] .connection:after { // вверх
+        position: absolute;
+        top: -31px;
+        left: 66px;
+        content: '';
+        border: 1px solid #fff;
+        height: 60px;
+        color: #fff;
+    }
+
+    tr[data-level='2'] + tr[data-level='3'][data-last='true'] .connection:after { // вверх
+        position: absolute;
+        top: -31px;
+        left: 66px;
+        content: '';
+        border: 1px solid #fff;
+        height: 60px;
+        color: #fff;
+    }
+
+    tr[data-level='3'] + tr[data-level='2'] .connection:after { // вверх
+        position: absolute;
+        top: -31px;
+        left: 36px;
+        content: '';
+        border: 1px solid #fff;
+        height: 60px;
+        color: #fff;
+    }
+
+    tr[data-level='2'] .connection > span {
+        left: 37px;
+    }
+
+    tr[data-level='3'] .connection > span {
+        left: 67px;
+    }
+}
+
+.allButtons {
+    z-index: 5;
+    position: relative;
+    width: fit-content;
+    background: #414144;
+    padding: 5px;
+
+    span {
+        margin: 0 2px;
+    }
+
+    .icon {
+        z-index: 10;
+        cursor: pointer;
+    }
+}
+
+.banner {
+    background: $background-primary;
+    border: 1px solid $gray;
+
+    >span {
+        display: inline-block;
+        border-right: 1px solid $gray;
+        padding: 10px;
+        color: #fff;
+    }
+}
